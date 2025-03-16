@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meongotstore - Contact Us</title>
+    <title>Meongotstore - Order Now</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@
         h2 {
             color: #8B6F47;
         }
-        .contact-form {
+        .order-form {
             max-width: 500px;
             margin: 0 auto;
         }
@@ -59,7 +59,7 @@
             margin-bottom: 5px;
             color: #333;
         }
-        input, textarea {
+        select, input, textarea {
             width: 100%;
             padding: 8px;
             border: 1px solid #ddd;
@@ -67,7 +67,7 @@
             box-sizing: border-box;
         }
         textarea {
-            height: 150px;
+            height: 100px;
             resize: vertical;
         }
         button {
@@ -110,7 +110,7 @@
 <body>
     <header>
         <h1>Meongotstore</h1>
-        <p>Contact Us</p>
+        <p>Order Now</p>
     </header>
 
     <nav>
@@ -121,28 +121,41 @@
     </nav>
 
     <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Have questions about our cakes? Want to place a special order? Contact us below!</p>
+        <h2>Place Your Order</h2>
+        <p>Select your favorite cake and let us know your delivery details!</p>
         
-        <div class="contact-form">
+        <div class="order-form">
             <form>
+                <div class="form-group">
+                    <label for="cake">Select Cake:</label>
+                    <select id="cake" name="cake" required>
+                        <option value="" disabled selected>Choose a cake</option>
+                        <option value="chocolate-bliss">Chocolate Bliss - $25</option>
+                        <option value="vanilla-dream">Vanilla Dream - $22</option>
+                        <option value="strawberry-delight">Strawberry Delight - $28</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="address">Delivery Address:</label>
+                    <textarea id="address" name="address" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone (Optional):</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="notes">Special Instructions (Optional):</label>
+                    <textarea id="notes" name="notes"></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit">Submit Order</button>
             </form>
         </div>
     </div>
