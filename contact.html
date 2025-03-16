@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meongotstore - Delicious Cakes</title>
+    <title>Meongotstore - Contact Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,24 +36,51 @@
         }
         .container {
             width: 80%;
-            margin: auto;
+            margin: 20px auto;
             padding: 20px;
             position: relative;
             z-index: 1;
-        }
-        .cake-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .cake-item {
             background-color: white;
-            padding: 15px;
-            margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 200px;
+        }
+        h2 {
+            color: #cc3366;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #ff9999;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #cc3366;
         }
         footer {
             background-color: #ff9999;
@@ -65,7 +92,6 @@
             width: 100%;
             z-index: 1;
         }
-
         /* Snowflake Effect */
         .snowflake {
             position: absolute;
@@ -76,7 +102,6 @@
             pointer-events: none;
             animation: fall linear infinite;
         }
-
         @keyframes fall {
             0% {
                 opacity: 0.8;
@@ -92,7 +117,7 @@
 <body>
     <header>
         <h1>Meongotstore</h1>
-        <p>Your Home for Delicious Cakes</p>
+        <p>Contact Us</p>
     </header>
 
     <nav>
@@ -103,26 +128,29 @@
     </nav>
 
     <div class="container">
-        <h2>Welcome to Meongotstore!</h2>
-        <p>We bake the most delicious cakes with love and care. Perfect for any occasion!</p>
+        <h2>Get in Touch</h2>
+        <p>Have questions about our cakes? Want to place a special order? Contact us below!</p>
         
-        <h2>Our Cakes</h2>
-        <div class="cake-list">
-            <div class="cake-item">
-                <h3>Chocolate Bliss</h3>
-                <p>Rich chocolate cake with creamy frosting</p>
-                <p>$25</p>
-            </div>
-            <div class="cake-item">
-                <h3>Vanilla Dream</h3>
-                <p>Light vanilla cake with sweet buttercream</p>
-                <p>$22</p>
-            </div>
-            <div class="cake-item">
-                <h3>Strawberry Delight</h3>
-                <p>Fresh strawberry cake with whipped cream</p>
-                <p>$28</p>
-            </div>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone (Optional):</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </div>
 
@@ -137,24 +165,17 @@
             snowflake.className = 'snowflake';
             snowflake.innerHTML = '❄';
             
-            // Random horizontal position
             snowflake.style.left = Math.random() * 100 + 'vw';
-            
-            // Random animation duration between 5 and 10 seconds
             snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
-            
-            // Random delay before starting
             snowflake.style.animationDelay = Math.random() * 5 + 's';
             
             document.body.appendChild(snowflake);
             
-            // Remove snowflake after it falls
             setTimeout(() => {
                 snowflake.remove();
             }, 10000);
         }
 
-        // Create snowflakes every 100ms
         setInterval(createSnowflake, 100);
     </script>
 </body>
